@@ -7,6 +7,12 @@
   background-repeat: no-repeat;
 }
 
-.class-white-text {
+.class-white-text-main {
   color: white;
+  font-size: 400%;
+}
+
+.class-white-text-sub {
+  color: white;
+  font-size: 200%;
 }
