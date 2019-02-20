@@ -7,10 +7,6 @@
   background-repeat: no-repeat;
 }
 
-h1.class-h1I {
-	color: white;
-}
-
-p.class-pI {
-	color: white;
+.class-white-text {
+  color: white;
 }
