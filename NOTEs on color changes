@@ -1,0 +1,13 @@
+Things to change in css: new #B9CCDC old #bd5d38
+
+.bg-primary{
+	background-color: #B9CCDC
+}
+
+.text-primary{
+	color: #B9CCDC
+}
+
+a {
+	color: #B9CCDC
+}
