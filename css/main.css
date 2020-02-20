@@ -17,6 +17,27 @@
   font-size: 200%;
 }
 
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("https://tdslivensky.github.io/img/IMG_2412.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.class-white-text-main {
+  color: white;
+  font-size: 400%;
+  font-family: 'Lato', sans-serif;
+}
+
+.class-white-text-sub {
+  color: white;
+  font-size: 200%;
+  font-family: 'Lato', sans-serif;
+}
+
 menu {
   height: 100%;
   width: 200px;
@@ -44,7 +65,7 @@ menu button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: #ece6ff;
+	color: #F8F8ff;
 	cursor: pointer;
 	overflow: hidden;
 }
@@ -82,3 +103,41 @@ menu button:hover span:last-of-type {transform: translate(-50%,-50%)}
   menu a {font-size: 18px;}
 }
 
+ul,
+ol,
+menu {
+		list-style: none;
+	}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  	color: inherit;
+  	font: inherit;
+  	margin: 0;
+  	background: transparent;
+		outline: none;
+		border: none;
+		border-radius: 0;
+		appearance: none;
+	}
+button,
+select {
+  text-transform: none;
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+/* ∞∞ global ∞∞ */
+	* {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border-color: inherit;
+	}
