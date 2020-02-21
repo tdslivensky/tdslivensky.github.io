@@ -95,7 +95,7 @@ menu button:hover {
 	border-radius: 0;
 }
 		
-menu button:hover span:first-of-type {transform: translate(1000%,-100%)}
+menu button:hover span:first-of-type {transform: translate(200%,-50%)}
 menu button:hover span:last-of-type {transform: translate(-50%,-50%)}
 
 @media screen and (max-height: 450px) {
