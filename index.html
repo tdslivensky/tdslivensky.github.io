@@ -17,7 +17,7 @@
 	    <div class="row h-100 align-items-center">
 	      <div class="col-12 text-center">
 	        <h1 class="class-white-text-main font-weight-light">Hi, I'm Tim Slivensky</h1>
-	        <h2 class="class-white-text-sub font-weight-light">Business Analyst, Web Developer, and Creator</h2>
+	        <h2 class="class-white-text-sub font-weight-light">Web Developer, Game Developer, and Creative Writer</h2>
 	      </div>
 	      <menu>
 	      	<!-- This is the new nside nav bar-->
@@ -27,10 +27,16 @@
 						<span>Resume</span>
 					</button>
 				</li>
-	       <li>
+	       `	<li>
 					<button id="insta">
 						<span class="fa fa-instagram fa-3x"></span>
 						<span>Instagram</span>
+					</button>
+				</li>
+				<li>
+					<button id="Games">
+						<span class="fa fa-gamepad fa-3x"></span>
+						<span>Games</span>
 					</button>
 				</li>
 			</menu>
@@ -44,6 +50,9 @@
     };
     document.getElementById("Resume").onclick = function () {
       downloadButton('https://tdslivensky.github.io/Timothy_Slivensky_Resume_Software.pdf','TimSlivenskyResume')
+    };
+	document.getElementById("Games").onclick = function () {
+		location.href = "https://simmer.io/@Velindil"
     };
 </script>
 </html>
