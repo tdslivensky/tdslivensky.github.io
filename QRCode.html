@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- icon references -->  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
+        <script src="js/qrcode.min.js"></script> 
+    </head>
+    <style>
+        .centered {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -100px;
+        }
+        .centered_button {
+            position: relative; 
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+    <body>
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-lg">Your URL Here</span>
+            </div>
+            <input type="text" id="qrData" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" onClick="GenerateQR()" type="button">Submit</button>
+              </div>
+        </div>
+        <!-- <input type="text" id="qrData" onchange="GenerateQR()"> -->
+        <div class="centered" id="qrCode">
+            <div id="qrCode"></div>
+            <button onclick="Download()" id="downloadButton" type="button" class="btn btn-outline-danger btn-lg centered_button" style="display: none; pa">Download</button>
+            </br>
+        </div>
+        
+    </body>
+
+    <script src="js/qrcode.min.js"></script>
+    <script>
+
+        let qrData = document.getElementById("qrData");
+        let qrCode = new QRCode(document.getElementById("qrCode"));
+
+        function GenerateQR() {
+            var data = qrData.value;
+            qrCode.makeCode(data);
+            document.getElementById("downloadButton").style.display = "block";
+
+        }
+
+        function Download() {
+            var d = document.createElement('a');
+            d.href = document.getElementById("qrCode").querySelector("img").src
+            d.download = 'QrCode.png';
+            d.click();
+        }
+    </script>
+</html>
