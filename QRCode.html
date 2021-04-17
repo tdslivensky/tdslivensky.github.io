@@ -7,11 +7,9 @@
     </head>
     <style>
         .centered {
-            position: fixed;
-            top: 40%;
-            left: 50%;
-            margin-top: -50px;
-            margin-left: -100px;
+            position: relative;
+            padding: 10%;
+            /* background-color: hsla(50, 33%, 25%, 0.10); */
         }
         .centered_button {
             position: relative; 
@@ -19,22 +17,33 @@
             transform: translateX(-50%);
         }
     </style>
-    <body>
-        <div class="input-group input-group-lg">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-lg">Your URL Here</span>
+    <body class="centered">
+        <div class="card">
+            <div class="card-header">
+                <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-lg">Your URL Here</span>
+                    </div>
+                    <input type="text" id="qrData" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" onchange="GenerateQR()">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success" onClick="GenerateQR()" type="button">Submit</button>
+                      </div>
+                </div>
             </div>
-            <input type="text" id="qrData" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" onClick="GenerateQR()" type="button">Submit</button>
-              </div>
-        </div>
+            <div class="card-body">
+                <div id="qrCode">
+                    <div id="qrCode"></div>
+                    <button onclick="Download()" id="downloadButton" type="button" class="btn btn-outline-danger btn-lg centered_button" style="display: none;">Download</button>
+                    </br>
+                </div>
+          </div>
+
         <!-- <input type="text" id="qrData" onchange="GenerateQR()"> -->
-        <div class="centered" id="qrCode">
-            <div id="qrCode"></div>
+        <!-- <div class="centered" id="qrCode">
+            <div id="qrCode" ></div>
             <button onclick="Download()" id="downloadButton" type="button" class="btn btn-outline-danger btn-lg centered_button" style="display: none;">Download</button>
             </br>
-        </div>
+        </div> -->
         
     </body>
 
@@ -48,7 +57,7 @@
             var data = qrData.value;
             qrCode.makeCode(data);
             document.getElementById("downloadButton").style.display = "block";
-
+            document.getElementById("qrCode").querySelector("img").classList.add("centered_button")
         }
         function Download() {
             var d = document.createElement('a');
